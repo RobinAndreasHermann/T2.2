@@ -62,7 +62,7 @@ public class Student {
 
     Student(){
         //Call other constructor Task 2.4
-        new Student(null, null, studentId, 0, new Date(0));
+        new Student(null, null, 0, 0, new Date(0));
     }
 
     Student(String firstname, String lastname, long studentId, double weight, Date birthday){
