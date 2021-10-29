@@ -15,7 +15,8 @@ public class StudentList {
 
     StudentList(StudentList studentList){
         for(Student s : studentList.students){
-            this.students.add(s);
+            Student studentCopy = new Student(s.getFirstname(), s.getLastname(), s.getStudentId(), s.getWeight(), s.getBirthday());
+            this.students.add(studentCopy);
         }
     }
 
