@@ -56,7 +56,6 @@ public class StudentListTests {
         studentList1.add(student);
         StudentList studentList2 = new StudentList(studentList1);
 
-
         Assert.assertEquals(studentList1.get(0).getFirstname() , studentList2.get(0).getFirstname());
     }
 

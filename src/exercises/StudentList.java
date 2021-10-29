@@ -101,4 +101,128 @@ public class StudentList {
         }
         return false;
     }
+
+
+
+    public void sort(Student.SortKey key){
+        switch (key){
+            case FIRSTNAME:{
+                sortByFirstname();
+                break;
+            }
+            case LASTNAME:{
+                sortByLastname();
+                break;
+            }
+            case STUDENT_ID:{
+                sortByStudentId();
+                break;
+            }
+            case WEIGHT:{
+                sortByWeight();
+                break;
+            }
+            case BIRTHDAY:{
+                sortByBirthday();
+                break;
+            }
+        }
+    }
+
+
+    /*
+        Easy sorting algorithm where 2 neighbor field values are compared.
+        If the left value is greater than the right, both Objects switches in the list.
+        After two elements were switched, the algorithm starts at the beginning of the list.
+
+        If the Algorithm reaches the last element of the list, no elements further need to be switched, so the list is sorted
+     */
+    private void sortByFirstname(){
+        int currentIndex = 0;
+
+        while (true){
+            //if currentIndex reaches the end of students, the List is sorted
+            if(currentIndex == students.size()-1){
+                return;
+            }
+            //if the Students Firstname at currentIndex is greater than the FStudents Firstname at currentIndex +1, both Students switch
+            if (students.get(currentIndex).getFirstname().compareTo(students.get(currentIndex + 1).getFirstname()) > 0){
+                switchStudents(currentIndex, currentIndex+1);
+            }
+        }
+    }
+
+    private void sortByLastname(){
+        int currentIndex = 0;
+
+        while (true){
+            //if currentIndex reaches the end of students, the List is sorted
+            if(currentIndex == students.size()-1){
+                return;
+            }
+            //if the Students Lastname at currentIndex is greater than the Students Lastname at currentIndex +1, both Students switch
+            if (students.get(currentIndex).getLastname().compareTo(students.get(currentIndex + 1).getLastname()) > 0){
+                switchStudents(currentIndex, currentIndex+1);
+            }
+        }
+    }
+
+    private void sortByStudentId(){
+        int currentIndex = 0;
+
+        while (true){
+            //if currentIndex reaches the end of students, the List is sorted
+            if(currentIndex == students.size()-1){
+                return;
+            }
+            //if the Students StudentId at currentIndex is greater than the Students StudentId at currentIndex +1, both Students switch
+            if ((students.get(currentIndex).getStudentId() - students.get(currentIndex + 1).getStudentId()) > 0){
+                switchStudents(currentIndex, currentIndex+1);
+            }
+        }
+    }
+
+    private void sortByWeight(){
+        int currentIndex = 0;
+
+        while (true){
+            //if currentIndex reaches the end of students, the List is sorted
+            if(currentIndex == students.size()-1){
+                return;
+            }
+            //if the Students Weight at currentIndex is greater than the Students Weight at currentIndex +1, both Students switch
+            if ((students.get(currentIndex).getWeight() - students.get(currentIndex + 1).getWeight()) > 0){
+                switchStudents(currentIndex, currentIndex+1);
+            }
+        }
+    }
+
+    private void sortByBirthday(){
+        int currentIndex = 0;
+
+        while (true){
+            //if currentIndex reaches the end of students, the List is sorted
+            if(currentIndex == students.size()-1){
+                return;
+            }
+            //if the Students Birthday at currentIndex is greater than the Students Birthday at currentIndex +1, both Students switch
+            if (students.get(currentIndex).getBirthday().compareTo(students.get(currentIndex + 1).getBirthday()) > 0){
+                switchStudents(currentIndex, currentIndex+1);
+            }
+        }
+    }
+
+
+
+    /** Switches the Students at index1 with Student at index2
+     *
+     * @param index1 index of Student 1 to switch
+     * @param index2 index of Student 2 to switch
+     */
+    private void switchStudents(int index1, int index2){
+        Student temp = students.get(index1);
+        students.set(index1, students.get(index2));
+        students.set(index2, temp);
+        return;
+    }
 }
