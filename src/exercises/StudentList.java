@@ -3,7 +3,6 @@ package exercises;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class StudentList {
 
@@ -102,7 +101,4 @@ public class StudentList {
         }
         return false;
     }
-
-
-
 }

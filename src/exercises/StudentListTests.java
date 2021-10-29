@@ -8,16 +8,48 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class StudentListTests {
 
+
+
     @Test
-    public void t_copyConstructor(){
+    public void t_copyConstructor_StudentsNoSameObjects(){
+       int numberOfTestStudents = 5;
 
-       StudentList l1 = new StudentList();
+       //declare and initialize a StudentList of random Students
+       StudentList l1 = createRandomStudentList(numberOfTestStudents);
 
-       for
+       //declare and initialize the copy of List1
+       StudentList l2 = new StudentList(l1);
+
+        for(int i = 0; i < numberOfTestStudents; i++){
+            Assert.assertNotSame(l1.get(0), l2.get(0));
+        }
     }
 
     @Test
-    public void t_copyContructor_sameFirstnameAfterCopy(){
+    public void t_copyConstructor_copiedStudentsSameValues(){
+        int numberOfTestStudents = 5;
+
+        //declare and initialize a StudentList of random Students
+        StudentList l1 = createRandomStudentList(numberOfTestStudents);
+
+        //declare and initialize the copy of List1
+        StudentList l2 = new StudentList(l1);
+
+        String allValues1 = "";
+        String allValues2 = "";
+        for(int i = 0; i < numberOfTestStudents; i++){
+            allValues1 += l1.get(i).toString();
+            allValues2 += l2.get(i).toString();
+        }
+        Assert.assertEquals(allValues1, allValues2);
+    }
+
+
+
+    //Test with only one Element in a StudentList
+
+    @Test
+    public void t_copyContructor_oneElement_sameFirstnameAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -29,7 +61,7 @@ public class StudentListTests {
     }
 
     @Test
-    public void t_copyContructor_sameLastnameAfterCopy(){
+    public void t_copyContructor_oneElement_sameLastnameAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -41,7 +73,7 @@ public class StudentListTests {
     }
 
     @Test
-    public void t_copyContructor_sameStudentIdAfterCopy(){
+    public void t_copyContructor_oneElement_sameStudentIdAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -54,7 +86,7 @@ public class StudentListTests {
 
 
     @Test
-    public void t_copyContructor_sameWeightAfterCopy(){
+    public void t_copyContructor_oneElement_sameWeightAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -66,7 +98,7 @@ public class StudentListTests {
     }
 
     @Test
-    public void t_copyContructor_sameBirthdaynameAfterCopy(){
+    public void t_copyContructor_oneElement_sameBirthdaynameAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -83,6 +115,14 @@ public class StudentListTests {
 
     //Methods to create random values for testing
 
+
+    private StudentList createRandomStudentList(int numberOfStudents){
+        StudentList l1 = new StudentList();
+        for(int i = 0; i<=numberOfStudents; i++){
+            l1.add(createRandomStudent());
+        }
+        return l1;
+    }
 
     private Student createRandomStudent(){
         String firstname = createRandomString(7);
