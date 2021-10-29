@@ -35,13 +35,13 @@ public class StudentListTests {
         //declare and initialize the copy of List1
         StudentList l2 = new StudentList(l1);
 
-        String allValues1 = "";
-        String allValues2 = "";
+        StringBuilder allValues1 = new StringBuilder();
+        StringBuilder allValues2 = new StringBuilder();
         for(int i = 0; i < numberOfTestStudents; i++){
-            allValues1 += l1.get(i).toString();
-            allValues2 += l2.get(i).toString();
+            allValues1.append(l1.get(i).toString());
+            allValues2.append(l2.get(i).toString());
         }
-        Assert.assertEquals(allValues1, allValues2);
+        Assert.assertEquals(allValues1.toString(), allValues2.toString());
     }
 
 
