@@ -73,7 +73,10 @@ public class Student {
         this.birthday = birthday;
     }
 
-
+    @Override
+    public String toString(){
+        return firstname + " " + lastname + " " + Long.toString(studentId) + " " + Double.toString(weight) + " " + birthday.toString();
+    }
 
 
 }
