@@ -8,10 +8,17 @@ public class StudentList {
 
     ArrayList<Student> students = new ArrayList<>();
 
+    /**
+     * Inizializes an empty list of Students.
+     */
     StudentList(){
 
     }
 
+    /**
+     * Initialize a copy of the passed list.
+     * @param studentList an instance of the class StudentList to copy.
+     */
     StudentList(StudentList studentList){
         for(Student s : studentList.students){
             Student studentCopy = new Student(s.getFirstname(), s.getLastname(), s.getStudentId(), s.getWeight(), s.getBirthday());
@@ -19,7 +26,14 @@ public class StudentList {
         }
     }
 
-    //Methods for 2.8
+
+    //region Methods for Task 2.8
+
+    /**
+     * Adds the passed object of Student to the list, if the studentId does not net exists in the list.
+     * @param student the object of Student to add to the list.
+     * @return true if the Student was added. false if a Student with the same studentId already exists in the list.
+     */
     boolean add(Student student){
         if(containsId(student.getStudentId())){
             return false;
@@ -28,6 +42,11 @@ public class StudentList {
         return true;
     }
 
+    /**
+     * Removes the passed student from the list, if it exists in the list.
+     * @param student The instance of Student to remove from the list.
+     * @return true, if the Student was removed, false if the Student didn't exist in the list.
+     */
     boolean remove(Student student){
         for (Student s : students) {
             if (Long.compare(s.getStudentId(), (student.getStudentId())) == 0){
@@ -38,6 +57,11 @@ public class StudentList {
         return false;
     }
 
+    /**
+     * Removes the Student at the passed index, if the index is in range.
+     * @param pos The index at which the Student is deleted.
+     * @return Returns the deleted Student if the index was in range, or null.
+     */
     Student remove(int pos){
         if(0 <= pos && pos < students.size()){
             Student s = students.get(pos);
@@ -47,6 +71,11 @@ public class StudentList {
         return null;
     }
 
+    /**
+     * Get the Student at the passed index, if the index is in range.
+     * @param pos The Index of the Student to return.
+     * @return Returns the Student at the passed index, or null if the index is not in range.
+     */
     Student get(int pos){
         if(0 <= pos && pos < students.size()){
             return students.get(pos);
@@ -54,6 +83,11 @@ public class StudentList {
         return null;
     }
 
+    /**
+     * Search in the list for the Students with the passed lastname.
+     * @param lastname The lastname that is being searched for.
+     * @return A list of indices of Students with the passed lastname.
+     */
     ArrayList<Integer> findLastname(String lastname){
         ArrayList<Integer> resultList = new ArrayList<>();
         for(Student s : students){
@@ -65,6 +99,11 @@ public class StudentList {
         return resultList;
     }
 
+    /**
+     * Search in the list for the Students with the passed firstname.
+     * @param firstname The firstname that is being searched for.
+     * @return A list of indices of Students with the passed firstname.
+     */
     ArrayList<Integer> findFirstname(String firstname){
         ArrayList<Integer> resultList = new ArrayList<>();
         for(Student s : students){
@@ -76,6 +115,11 @@ public class StudentList {
         return resultList;
     }
 
+    /**
+     * Searches the list for a Student with the passed studentId
+     * @param studentId The studentId for which the list is searched
+     * @return Returns the index of the Student with the passed studentId if it exists in the list. Returns -1 otherwise.
+     */
     int findStudentId(long studentId){
         for(int i = 0; i < students.size(); i++){
             if(Long.compare(students.get(i).getStudentId(), studentId) == 0){
@@ -85,6 +129,10 @@ public class StudentList {
         return -1;
     }
 
+    /**
+     * Counts the number of Students in the list.
+     * @return Returns the number of Students in the list.
+     */
     int size(){
         int i = 0;
         for(Student s : students){
@@ -93,6 +141,11 @@ public class StudentList {
         return i;
     }
 
+    /**
+     * Searches the list for the passed studentId
+     * @param studentId The studentId the list is searched for.
+     * @return true, if the studentId exists in the list. false otherwise.
+     */
     private boolean containsId(final long studentId){
         for (Student s : students) {
             if (Long.compare(s.getStudentId(), studentId) == 0){
@@ -101,9 +154,13 @@ public class StudentList {
         }
         return false;
     }
+    //endregion
 
 
-
+    /**
+     * Sorts the list in ascending order according to the passed key.
+     * @param key The key by which the list is sorted.
+     */
     public void sort(Student.SortKey key){
         switch (key){
             case FIRSTNAME:{

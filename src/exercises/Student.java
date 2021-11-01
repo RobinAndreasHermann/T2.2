@@ -5,6 +5,8 @@ import java.util.Date;
 public class Student {
 
 
+    //Getter and Setter
+
     //Getter and setter Task 2.5
     public String getFirstname() {
         return firstname;
@@ -60,8 +62,8 @@ public class Student {
     //Enum for Task 2.3
     public enum SortKey{FIRSTNAME, LASTNAME, STUDENT_ID, WEIGHT, BIRTHDAY}
 
-    /***
-     * Initialize an Object of Student with:
+    /**
+     * Initializes an Object of Student with:
      * firstname = null
      * lastname = null
      * studentId = 0
@@ -73,8 +75,8 @@ public class Student {
         new Student(null, null, 0, 0, new Date(0));
     }
 
-    /***
-     * Initialize an Object of Student
+    /**
+     * Initializes an object of Student
      * @param firstname The firstname of the student
      * @param lastname The Lastname of the student
      * @param studentId The StudentId of the Student
@@ -89,7 +91,7 @@ public class Student {
         this.birthday = birthday;
     }
 
-    /***
+    /**
      * Returns all five fields of a student in one string, seperated by spaces
      * @return firstname lastname studentId weight birthday
      */
