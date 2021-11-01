@@ -131,7 +131,7 @@ public class Test_StudentListSort {
 
 
     @Test
-    public void t_sortBithday(){
+    public void t_sortBirthday(){
         //create Teststudents
         //Array of Students in the right order, to address them by index
         Student[] sArray = createTenSortedStudents();
