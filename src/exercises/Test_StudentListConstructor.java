@@ -49,7 +49,7 @@ public class Test_StudentListConstructor {
     //Test with only one Element in a StudentList
 
     @Test
-    public void t_copyContructor_oneElement_sameFirstnameAfterCopy(){
+    public void t_copyConstructor_oneElement_sameFirstnameAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -60,7 +60,7 @@ public class Test_StudentListConstructor {
     }
 
     @Test
-    public void t_copyContructor_oneElement_sameLastnameAfterCopy(){
+    public void t_copyConstructor_oneElement_sameLastnameAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -72,7 +72,7 @@ public class Test_StudentListConstructor {
     }
 
     @Test
-    public void t_copyContructor_oneElement_sameStudentIdAfterCopy(){
+    public void t_copyConstructor_oneElement_sameStudentIdAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -85,7 +85,7 @@ public class Test_StudentListConstructor {
 
 
     @Test
-    public void t_copyContructor_oneElement_sameWeightAfterCopy(){
+    public void t_copyConstructor_oneElement_sameWeightAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -97,7 +97,7 @@ public class Test_StudentListConstructor {
     }
 
     @Test
-    public void t_copyContructor_oneElement_sameBirthdaynameAfterCopy(){
+    public void t_copyConstructor_oneElement_sameBirthdayAfterCopy(){
 
         Student student = createRandomStudent();
         StudentList studentList1 = new StudentList();
@@ -149,12 +149,12 @@ public class Test_StudentListConstructor {
     }
 
     //edited Template from https://www.baeldung.com/java-generate-random-long-float-integer-double Example 2.1
-    private Long createRandomLong(int lenght) {
-        if(lenght <= 0){
+    private Long createRandomLong(int length) {
+        if(length <= 0){
             return null;
         }
-        long leftLimit = (long) Math.pow(10, lenght-1);
-        long rightLimit = (long) (Math.pow(10, lenght)-1);
+        long leftLimit = (long) Math.pow(10, length -1);
+        long rightLimit = (long) (Math.pow(10, length)-1);
         long generatedLong = leftLimit + (long) (Math.random() * (rightLimit - leftLimit));
         return generatedLong;
     }
