@@ -50,7 +50,7 @@ public class Student {
     }
 
 
-    //Filds for Task 2.2
+    //Fields for Task 2.2
     String firstname;
     String lastname;
     long studentId;
@@ -60,11 +60,27 @@ public class Student {
     //Enum for Task 2.3
     public enum SortKey{FIRSTNAME, LASTNAME, STUDENT_ID, WEIGHT, BIRTHDAY}
 
+    /***
+     * Initialize an Object of Student with:
+     * firstname = null
+     * lastname = null
+     * studentId = 0
+     * weight = 0
+     * birthday = January 1, 1970 in UTC
+     */
     Student(){
         //Call other constructor Task 2.4
         new Student(null, null, 0, 0, new Date(0));
     }
 
+    /***
+     * Initialize an Object of Student
+     * @param firstname The firstname of the student
+     * @param lastname The Lastname of the student
+     * @param studentId The StudentId of the Student
+     * @param weight The weight of the student
+     * @param birthday The birthday of the student
+     */
     Student(String firstname, String lastname, long studentId, double weight, Date birthday){
         this.firstname = firstname;
         this.lastname = lastname;
@@ -73,6 +89,10 @@ public class Student {
         this.birthday = birthday;
     }
 
+    /***
+     * Returns all five fields of a student in one string, seperated by spaces
+     * @return firstname lastname studentId weight birthday
+     */
     @Override
     public String toString(){
         return firstname + " " + lastname + " " + Long.toString(studentId) + " " + Double.toString(weight) + " " + birthday.toString();
