@@ -4,10 +4,14 @@ import java.util.Date;
 
 public class Student {
 
+    //Fields for Task 2.2
+    String firstname;
+    String lastname;
+    long studentId;
+    double weight;
+    Date birthday;
 
-    //Getter and Setter
-
-    //Getter and setter Task 2.5
+    //region Getter and setter Task 2.5
     public String getFirstname() {
         return firstname;
     }
@@ -50,14 +54,8 @@ public class Student {
     public String getName(){
         return firstname + "" + lastname;
     }
+    //endregion
 
-
-    //Fields for Task 2.2
-    String firstname;
-    String lastname;
-    long studentId;
-    double weight;
-    Date birthday;
 
     //Enum for Task 2.3
     public enum SortKey{FIRSTNAME, LASTNAME, STUDENT_ID, WEIGHT, BIRTHDAY}
@@ -99,6 +97,5 @@ public class Student {
     public String toString(){
         return firstname + " " + lastname + " " + Long.toString(studentId) + " " + Double.toString(weight) + " " + birthday.toString();
     }
-
 
 }
