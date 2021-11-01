@@ -150,7 +150,7 @@ public class Test_StudentListSort {
     }
 
 
-    //region Initialize Testvalues
+    //region Initialize TestValues
     private Student[] createTenSortedStudents(){
         Student s0 = new Student("Firstname0", "Lastname0", 123456789000L, 10D, new Date(2000, 01, 01));
         Student s1 = new Student("Firstname1", "Lastname1", 123456789010L, 11D, new Date(2010, 01, 01));
