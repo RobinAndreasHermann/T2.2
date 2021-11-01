@@ -1,14 +1,16 @@
+// AG0706
+// Robin Hermann 108017239224, Konstantin Schauerte 108018219798, Leon Mainusch 108020225191
 package exercises;
 
 import org.junit.Test;
 import org.junit.Assert;
+
 import java.util.Date;
 
 public class Test_StudentListSort {
 
-
     @Test
-    public void t_sortFirstname_allNamesDiff(){
+    public void t_sortFirstname_allNamesDiff() {
         //create Teststudents
         //Array of Students in the right order, to address them by index
         Student[] sArray = createTenSortedStudents();
@@ -20,14 +22,14 @@ public class Test_StudentListSort {
         slist.sort(Student.SortKey.FIRSTNAME);
 
         //Check if the List is sorted correctly
-        for (int i = 0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             //compares the i´th Firstname in the right order with the i´th firstname in the sorted list
             Assert.assertEquals(sArray[i].getFirstname(), slist.get(i).getFirstname());
         }
     }
 
     @Test
-    public void t_sortFirstname_namesStartsWithOtherName(){
+    public void t_sortFirstname_namesStartsWithOtherName() {
         //create Teststudents
         //Array of Students in the right order, to address them by index
         Student[] sArray = createTwentySortedStudents();
@@ -41,16 +43,15 @@ public class Test_StudentListSort {
         slist.sort(Student.SortKey.FIRSTNAME);
 
         //Check if the List is sorted correctly
-        for (int i = 0; i<20; i++){
+        for (int i = 0; i < 20; i++) {
             //compares the i´th Firstname in the right order with the i´th firstname in the sorted list
             Assert.assertEquals(sArray[i].getFirstname(), slist.get(i).getFirstname());
         }
     }
 
 
-
     @Test
-    public void t_sortLastname_allNamesDiff(){
+    public void t_sortLastname_allNamesDiff() {
         //create Teststudents
         //Array of Students in the right order, to address them by index
         Student[] sArray = createTenSortedStudents();
@@ -62,14 +63,14 @@ public class Test_StudentListSort {
         slist.sort(Student.SortKey.LASTNAME);
 
         //Check if the List is sorted correctly
-        for (int i = 0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             //compares the i´th Lastname in the right order with the i´th Lastname in the sorted list
             Assert.assertEquals(sArray[i].getFirstname(), slist.get(i).getFirstname());
         }
     }
 
     @Test
-    public void t_sortLastname_namesStartsWithOtherName(){
+    public void t_sortLastname_namesStartsWithOtherName() {
         //create Teststudents
         //Array of Students in the right order, to address them by index
         Student[] sArray = createTwentySortedStudents();
@@ -83,7 +84,7 @@ public class Test_StudentListSort {
         slist.sort(Student.SortKey.LASTNAME);
 
         //Check if the List is sorted correctly
-        for (int i = 0; i<20; i++){
+        for (int i = 0; i < 20; i++) {
             //compares the i´th Lastname in the right order with the i´th Lastname in the sorted list
             Assert.assertEquals(sArray[i].getLastname(), slist.get(i).getLastname());
         }
@@ -91,7 +92,7 @@ public class Test_StudentListSort {
 
 
     @Test
-    public void t_sortStudentId(){
+    public void t_sortStudentId() {
         //create Teststudents
         //Array of Students in the right order, to address them by index
         Student[] sArray = createTenSortedStudents();
@@ -103,7 +104,7 @@ public class Test_StudentListSort {
         slist.sort(Student.SortKey.STUDENT_ID);
 
         //Check if the List is sorted correctly
-        for (int i = 0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             //compares the i´th StudentId in the right order with the i´th StudentId in the sorted list
             Assert.assertEquals(sArray[i].getStudentId(), slist.get(i).getStudentId());
         }
@@ -111,7 +112,7 @@ public class Test_StudentListSort {
 
 
     @Test
-    public void t_sortWeight(){
+    public void t_sortWeight() {
         //create Teststudents
         //Array of Students in the right order, to address them by index
         Student[] sArray = createTenSortedStudents();
@@ -123,7 +124,7 @@ public class Test_StudentListSort {
         slist.sort(Student.SortKey.WEIGHT);
 
         //Check if the List is sorted correctly
-        for (int i = 0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             //compares the i´th Weight in the right order with the i´th Weight in the sorted list
             Assert.assertEquals(sArray[i].getWeight(), slist.get(i).getWeight(), 0.0001);
         }
@@ -131,7 +132,7 @@ public class Test_StudentListSort {
 
 
     @Test
-    public void t_sortBirthday(){
+    public void t_sortBirthday() {
         //create Teststudents
         //Array of Students in the right order, to address them by index
         Student[] sArray = createTenSortedStudents();
@@ -143,7 +144,7 @@ public class Test_StudentListSort {
         slist.sort(Student.SortKey.BIRTHDAY);
 
         //Check if the List is sorted correctly
-        for (int i = 0; i<10; i++){
+        for (int i = 0; i < 10; i++) {
             //compares the i´th birthday in the right order with the i´th birthday in the sorted list
             Assert.assertEquals(sArray[i].getBirthday(), slist.get(i).getBirthday());
         }
@@ -151,7 +152,7 @@ public class Test_StudentListSort {
 
 
     //region Initialize TestValues
-    private Student[] createTenSortedStudents(){
+    private Student[] createTenSortedStudents() {
         Student s0 = new Student("Firstname0", "Lastname0", 123456789000L, 10D, new Date(2000, 01, 01));
         Student s1 = new Student("Firstname1", "Lastname1", 123456789010L, 11D, new Date(2010, 01, 01));
         Student s2 = new Student("Firstname2", "Lastname2", 123456789020L, 12D, new Date(2020, 01, 01));
@@ -167,7 +168,7 @@ public class Test_StudentListSort {
         return sArray;
     }
 
-    private StudentList createUnsortedStudentlistOfTen(Student[] s){
+    private StudentList createUnsortedStudentlistOfTen(Student[] s) {
         StudentList slist = new StudentList();
         slist.add(s[9]);
         slist.add(s[8]);
@@ -184,7 +185,7 @@ public class Test_StudentListSort {
     }
 
 
-    private Student[] createTwentySortedStudents(){
+    private Student[] createTwentySortedStudents() {
         Student[] firstTen = createTenSortedStudents();
         //Students are designed to fit between the first ten students, no matter which key is tested
         Student s00 = new Student("Firstname00", "Lastname00", 123456789001L, 100D, new Date(2001, 01, 01));
@@ -203,7 +204,7 @@ public class Test_StudentListSort {
         return sArray;
     }
 
-    private StudentList createUnsortedStudentlistOfTwenty(Student[] s){
+    private StudentList createUnsortedStudentlistOfTwenty(Student[] s) {
         StudentList slist = new StudentList();
         slist.add(s[19]);
         slist.add(s[17]);
@@ -229,7 +230,6 @@ public class Test_StudentListSort {
         return slist;
     }
     //endregion
-
 
 
 }
