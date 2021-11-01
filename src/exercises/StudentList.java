@@ -145,10 +145,18 @@ public class StudentList {
             if(currentIndex == students.size()-1){
                 return;
             }
+
             //if the Students Firstname at currentIndex is greater than the FStudents Firstname at currentIndex +1, both Students switch
             if (students.get(currentIndex).getFirstname().compareTo(students.get(currentIndex + 1).getFirstname()) > 0){
                 switchStudents(currentIndex, currentIndex+1);
+
+                //reset currentIndex
+                currentIndex = 0;
             }
+            else{
+                currentIndex++;
+            }
+
         }
     }
 
@@ -163,6 +171,12 @@ public class StudentList {
             //if the Students Lastname at currentIndex is greater than the Students Lastname at currentIndex +1, both Students switch
             if (students.get(currentIndex).getLastname().compareTo(students.get(currentIndex + 1).getLastname()) > 0){
                 switchStudents(currentIndex, currentIndex+1);
+
+                //reset currentIndex
+                currentIndex = 0;
+            }
+            else{
+                currentIndex++;
             }
         }
     }
@@ -178,6 +192,12 @@ public class StudentList {
             //if the Students StudentId at currentIndex is greater than the Students StudentId at currentIndex +1, both Students switch
             if ((students.get(currentIndex).getStudentId() - students.get(currentIndex + 1).getStudentId()) > 0){
                 switchStudents(currentIndex, currentIndex+1);
+
+                //reset currentIndex
+                currentIndex = 0;
+            }
+            else{
+                currentIndex++;
             }
         }
     }
@@ -193,6 +213,12 @@ public class StudentList {
             //if the Students Weight at currentIndex is greater than the Students Weight at currentIndex +1, both Students switch
             if ((students.get(currentIndex).getWeight() - students.get(currentIndex + 1).getWeight()) > 0){
                 switchStudents(currentIndex, currentIndex+1);
+
+                //reset currentIndex
+                currentIndex = 0;
+            }
+            else{
+                currentIndex++;
             }
         }
     }
@@ -208,6 +234,12 @@ public class StudentList {
             //if the Students Birthday at currentIndex is greater than the Students Birthday at currentIndex +1, both Students switch
             if (students.get(currentIndex).getBirthday().compareTo(students.get(currentIndex + 1).getBirthday()) > 0){
                 switchStudents(currentIndex, currentIndex+1);
+
+                //reset currentIndex
+                currentIndex = 0;
+            }
+            else{
+                currentIndex++;
             }
         }
     }

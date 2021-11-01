@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class StudentListTests {
+public class Test_StudentListConstructor {
 
 
 
@@ -113,7 +113,6 @@ public class StudentListTests {
 
 
     //Methods to create random values for testing
-
 
     private StudentList createRandomStudentList(int numberOfStudents){
         StudentList l1 = new StudentList();
