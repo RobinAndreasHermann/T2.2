@@ -23,7 +23,7 @@ public class Test_StudentListConstructor {
        StudentList l2 = new StudentList(l1);
 
         for(int i = 0; i < numberOfTestStudents; i++){
-            Assert.assertNotSame(l1.get(0), l2.get(0));
+            Assert.assertNotSame(l1.get(i), l2.get(i));
         }
     }
 
@@ -45,6 +45,9 @@ public class Test_StudentListConstructor {
         }
         Assert.assertEquals(allValues1.toString(), allValues2.toString());
     }
+
+
+
 
 
 
