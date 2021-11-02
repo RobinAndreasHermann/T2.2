@@ -54,7 +54,7 @@ public class Student {
 
     //provide full name
     public String getName(){
-        return firstname + "" + lastname;
+        return firstname + " " + lastname;
     }
     //endregion
 
